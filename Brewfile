@@ -1,3 +1,4 @@
+brew "coreutils"
 brew "fping"
 brew "git"
 brew "gnu-sed"
