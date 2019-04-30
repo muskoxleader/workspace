@@ -1,0 +1,5 @@
+### BEGIN INSERT
+
+[ -n "$PS1" ] && [ -n "$(set | grep ^__gen_ps1)" ] && PROMPT_COMMAND=__gen_ps1
+
+### END INSERT

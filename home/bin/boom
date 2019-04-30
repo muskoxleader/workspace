@@ -1,0 +1,14 @@
+#!/bin/bash
+# vim: nu: tabstop=8: softtabstop=8: shiftwidth=8
+
+tmux has-session -t $1
+if [ $? != 0 ]; then  
+	echo started session: $1
+	tmux new-session -s $1 -d "sleep 0.1"
+	for FQDN in $(cat $1); do
+		tmux split-window -t $1 -d ssh -o StrictHostKeyChecking=no $FQDN
+		tmux select-layout tiled
+	done
+	tmux set synchronize-panes on
+fi
+tmux attach -t $1

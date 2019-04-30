@@ -1,0 +1,8 @@
+[core]
+	user = fzhu
+	editor = vim
+[user]
+	name = fzhu
+	email = fzhu@yahoo-inc.com
+[alias]
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short

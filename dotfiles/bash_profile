@@ -1,0 +1,19 @@
+### BEGIN INSERT
+
+# Add $HOME/bin to path
+export PATH=$PATH:$HOME/bin
+
+# Add /usr/local/sbin if OS X
+[ $(uname) == 'Darwin' ] && export PATH=$PATH:/usr/local/sbin
+
+# Source $HOME/etc/profile.d/*
+if [ -d $HOME/etc/profile.d ]; then
+	for SCRIPT in $(ls $HOME/etc/profile.d); do
+		. $HOME/etc/profile.d/$SCRIPT
+	done
+fi
+
+# Source $HOME/.bashrc
+[ -f $HOME/.bashrc ] && . $HOME/.bashrc
+
+### END INSERT
