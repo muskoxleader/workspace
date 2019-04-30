@@ -1,0 +1,3 @@
+tap "caskroom/versions"
+cask "java11"
+brew "maven@3.5"
